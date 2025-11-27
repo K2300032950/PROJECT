@@ -29,9 +29,9 @@ spec:
           image: mysql:8.0
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: root123
+              value: root
             - name: MYSQL_DATABASE
-              value: bloodbank
+              value: blood
             - name: MYSQL_USER
               value: bb_user
             - name: MYSQL_PASSWORD
@@ -56,12 +56,12 @@ spec:
     spec:
       containers:
         - name: backend
-          image: dimpleakshaya/bloodbank-backend:v1
+          image: koushikm52/backend-image:latest
           ports:
             - containerPort: 8080
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/bloodbank
+              value: jdbc:mysql://mysql:3306/blood
             - name: SPRING_DATASOURCE_USERNAME
               value: bb_user
             - name: SPRING_DATASOURCE_PASSWORD
@@ -98,7 +98,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: dimpleakshaya/bloodbank-frontend:v1
+          image: koushikm52/frontend-image:latest
           ports:
             - containerPort: 80
           env:
